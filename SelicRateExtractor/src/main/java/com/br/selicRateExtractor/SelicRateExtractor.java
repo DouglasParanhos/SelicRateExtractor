@@ -1,9 +1,10 @@
-package selicRateExtractor;
+package com.br.selicRateExtractor;
 
 import java.time.Duration;
 import java.time.LocalDate;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,7 +48,11 @@ public class SelicRateExtractor {
 	 * @return Index of the given interval according to Banco Central do Brasil
 	 * */
 	public String getTaxaSelicPeriod(String initialDate, String finalDate) {
-		driver.get(Rates.valueOf(taxaARecuperar).getURL());
+		try {
+			driver.get(Rates.valueOf(taxaARecuperar).getURL());
+		} catch (InvalidArgumentException e) {
+			System.out.println("Couldn't open page " + Rates.valueOf(taxaARecuperar).getURL());
+		}
 		waitPageToLoad(10);
 		
 		findElementByNameAndEnterValue(Rates.valueOf(taxaARecuperar).getDataInicialFieldName(), initialDate);

@@ -1,4 +1,4 @@
-package selicRateExtractor;
+package com.br.selicRateExtractor;
 
 public enum Rates {
 	SELIC;
@@ -8,7 +8,7 @@ public enum Rates {
 		case SELIC:
 			return "https://www3.bcb.gov.br/CALCIDADAO/publico/exibirFormCorrecaoValores.do?method=exibirFormCorrecaoValores&aba=4";
 		default:
-			return "Taxa não encontrada!";
+			return "Rate not found!";
 		}
 	}
 	
@@ -17,7 +17,7 @@ public enum Rates {
 		case SELIC:
 			return "dataInicial";
 		default:
-			return "Taxa não encontrada!";
+			return "Rate not found!";
 		}
 	}
 	
@@ -26,7 +26,7 @@ public enum Rates {
 		case SELIC:
 			return "dataFinal";
 		default:
-			return "Taxa não encontrada!";
+			return "Rate not found!";
 		}
 	}
 	
@@ -35,7 +35,7 @@ public enum Rates {
 		case SELIC:
 			return "valorCorrecao";
 		default:
-			return "Taxa não encontrada!";
+			return "Rate not found!";
 		}
 	}
 	
